@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'ERASBD';
+    src: url('../fonts/ERASBD.TTF');
+    src: local('ERASBD'), local('ERASBD'), url('../fonts/ERASBD.TTF') format('truetype');
+}
+
+.hidden {
+    display: none;
+}
+
+.cen {
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hide {
+    display: none;
+}

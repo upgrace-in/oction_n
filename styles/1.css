@@ -1,0 +1,25 @@
+body {
+    background-size: cover;
+    background: url(../srcs/imgs/part1/bg.png) no-repeat center fixed;
+    color: white !important;
+}
+
+.cen {
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.h3{
+    font-family: 'angella';
+}
+
+.logo>img {
+    margin-top: 20px;
+    padding: 40px;
+    width: 500px;
+}
+
+.part_btn>img {
+    width: 200px;
+}

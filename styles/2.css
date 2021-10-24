@@ -1,0 +1,116 @@
+.mt-10 {
+    margin-top: 10%;
+}
+
+body {
+    background-size: cover;
+    background: url(../srcs/imgs/part3/BG.png) no-repeat center fixed;
+    color: white !important;
+}
+
+.address_img {
+    background-size: cover;
+    border-radius: 20px;
+    background: linear-gradient(#f1a70c, #e67c13);
+    height: 50px;
+    margin: 10px;
+}
+
+.text-box {
+    padding: 40px;
+}
+
+.big_y {
+    font-size: 2rem !important;
+}
+
+.text-box {
+    height: 100%;
+    cursor: pointer;
+    border-radius: 20px;
+    background-size: cover;
+    background-image: linear-gradient(#3e3866, #322c58);
+}
+
+.yellow_text {
+    font-size: 1.5rem;
+    font-family: 'ERASBD';
+    background: -webkit-linear-gradient(#f7e700, #ce9500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.big-text {
+    font-size: 1.5rem;
+    font-family: 'ERASBD';
+    background: -webkit-linear-gradient(#ffffff, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.small-bnb {
+    font-size: 1rem;
+    font-family: 'ERASBD';
+    background: -webkit-linear-gradient(#ffffff, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bg-con {
+    background-size: cover;
+    background: url(../srcs/imgs/part3/sprite.png) no-repeat center fixed;
+}
+
+.h3 {
+    font-family: 'ERASBD';
+}
+
+.logo>img {
+    margin-top: 20px;
+    padding: 40px;
+    width: 500px;
+}
+
+.part_btn>img {
+    width: 200px;
+}
+
+.ethaddress {
+    font-size: 1.3rem;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-family: 'ERASBD';
+    padding: 8px 5px 5px 5px;
+    text-shadow: 0 0 5px #000000, 0 0 5px #000000;
+    /* letter-spacing: 0.09rem; */
+    word-break: break-all;
+}
+
+.cons{
+    padding: 10px;
+}
+
+@media(max-width: 780px){
+    .ethaddress{
+        font-size: 0.9rem;
+    }
+    .yellow_text{
+        font-size: 1rem;
+    }
+    .white_text{
+        font-size: 1rem;
+    }
+    .black_text{
+        font-size: 1rem;
+    }
+    .text-box{
+        padding: 20px !important;
+    }
+    .cons{
+        margin-bottom: 10px;
+    }
+    .bg-con{
+        background: none !important;
+    }
+}
