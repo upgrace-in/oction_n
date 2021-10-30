@@ -1,0 +1,9 @@
+available : balanceoF /100 will be static, buyticket
+
+game_status false the textbox area 
+
+approve function lottery contractr
+
+hwo many chest are presnet : boxcount 
+
+pick this box : pickabox
