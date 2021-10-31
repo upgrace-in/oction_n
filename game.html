@@ -14,23 +14,100 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
         integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="srcs/imgs/part1/BLUE.png">
     <link rel="stylesheet" href="styles/3.css">
     <link rel="stylesheet" href="styles/default.css">
+    <link rel="stylesheet" href="styles/music.css">
+
 </head>
 
 <body>
     <div class="col-md-12" style="margin-top:10%">
+
+        <div id="app-cover">
+            <div id="bg-artwork"></div>
+            <div id="bg-layer"></div>
+            <div id="player">
+                <div id="player-track">
+                    <div id="album-name"></div>
+                    <div id="track-name"></div>
+                    <div id="track-time">
+                        <div id="current-time"></div>
+                        <div id="track-length"></div>
+                    </div>
+                    <div id="s-area">
+                        <div id="ins-time"></div>
+                        <div id="s-hover"></div>
+                        <div id="seek-bar"></div>
+                    </div>
+                </div>
+                <div id="player-content">
+                    <div id="album-art">
+                        <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg"
+                            class="active" id="_1">
+                        <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_2.jpg"
+                            id="_2">
+                        <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_3.jpg"
+                            id="_3">
+                        <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_4.jpg"
+                            id="_4">
+                        <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_5.jpg"
+                            id="_5">
+                        <div id="buffer-box">Buffering ...</div>
+                    </div>
+                    <div id="player-controls">
+                        <div class="control">
+                            <div class="button" id="play-previous">
+                                <i class="fas fa-backward"></i>
+                            </div>
+                        </div>
+                        <div class="control">
+                            <div class="button" id="play-pause-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="control">
+                            <div class="button" id="play-next">
+                                <i class="fas fa-forward"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="wallet_connected"></div>
         <div id="overlay"></div>
         <div class="col-md-12 text-center mx-auto" id="floating-box">
             <div class="col-md-5 mx-auto text-center floater">
-                <img class="cen mx-auto text-center" style="width: 400px" src="srcs/chest.png" alt="" />
+                <img id="change_me" class="cen mx-auto text-center" style="width: 400px" src="srcs/chest.png" alt="" />
                 <br />
-                <img class="cen mx-auto text-center" style="width: 250px" src="srcs/yellow_button.png" alt="" />
-                <br />
-                <img class="cen mx-auto text-center" style="width: 200px" src="srcs/cls_button.png" alt="" />
+
+                <div class="buttons">
+                    <img onclick="pickabox();" style="cursor: pointer; width: 250px;" class="cen mx-auto text-center"
+                        src="srcs/yellow_button.png" alt="" />
+                    <br />
+                    <img onclick="$('#overlay').hide(); $('#floating-box').fadeOut();" class="cen mx-auto text-center"
+                        style="cursor:pointer; width: 200px" src="srcs/cls_button.png" alt="" />
+                </div>
+                <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+                <div class="w3-container"
+                    style="width: 90%; text-align: center; justify-content: center; margin-right: auto; margin-left: auto;">
+                    <div class="w3-light-grey w3-round-xlarge pb2 hidden">
+                        <div id="progressBar2" class="w3-container w3-green w3-round-xlarge">
+                            <h6 class="white_text black_text">Loading</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="success hidden">
+                    <h5>You won <span class="white_text">0.05</span> BNB</h5>
+                    <img onclick="$('#overlay').hide(); $('#floating-box').fadeOut();" class="cen mx-auto text-center"
+                        style="cursor:pointer; width: 200px" src="srcs/cls_button.png" alt="" />
+                </div>
+
             </div>
         </div>
         <div class="container">
@@ -84,16 +161,18 @@
                                 </tr>
                                 <tr>
                                     <td class="yellow-text">Available: </td>
-                                    <td><span class="big-text">10<span class="small-bnb">/100</span></span></td>
+                                    <td><span id="availability" class="big-text">10</span><span
+                                            class="small-bnb">/100</span></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <br />
-                    <a href="" class="part_btn hidden">
-                        <img class="cen" style="width: 400px" src="srcs/imgs/part2/approve_btn.png" alt="" />
+                    <a style="cursor: pointer;" class="approve_btn part_btn">
+                        <img onclick="approve();" class="cen" style="width: 400px" src="srcs/imgs/part2/approve_btn.png"
+                            alt="" />
                     </a>
-                    <div class="row">
+                    <div class="row hidden input_form">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input placeholder="Input Number" type="number" class="form-control"
@@ -159,8 +238,6 @@
                     <img class="text-center mx-auto" src="srcs/imgs/part2/reward_img.png" />
                     <br />
                     <h5 class="white_text">REWARD IS NOT AVAILABLE YET</h5>
-
-                    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
                     <div class="w3-container"
                         style="width: 70%; text-align: center; justify-content: center; margin-right: auto; margin-left: auto;">
                         <div class="w3-light-grey w3-round-xlarge">
@@ -169,11 +246,10 @@
                             </div>
                         </div>
                     </div>
-                    <br />
-                    <br />
+
                 </div>
                 <div class="part5 hidden">
-                    <h5 class="white_text">Chest boxes left: <span>83</span>/100</h5>
+                    <h5 class="white_text">Chest boxes left: <span id="boxcount">0</span>/100</h5>
                     <br />
                     <div class="part5" style="padding: 40px">
                         <div class="slider">
@@ -246,6 +322,7 @@
             }]
         });
     </script>
+    <script src="js/music.js"></script>
 </body>
 
 </html>
