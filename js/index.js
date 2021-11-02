@@ -53,8 +53,8 @@ async function allowance() {
 }
 
 async function approve() {
-    var contract = new web3.eth.Contract(lucky_abi, lucky_address);
-    contract.methods.approve(lucky_address, "0xffffffffffffffffffffffffffffffffffff").send({ from: ethaddress }).then((d) => {
+    var contract = new web3.eth.Contract(token_abi, token_address);
+    contract.methods.approve(lottery_address, "0xffffffffffffffffffffffffffffffffffff").send({ from: ethaddress }).then((d) => {
         console.log(d)
     })
 }
