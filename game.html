@@ -86,13 +86,21 @@
                 <img id="change_me" class="cen mx-auto text-center" style="width: 400px" src="srcs/chest.png" alt="" />
                 <br />
 
-                <div class="buttons">
+                <div class="approve_con">
+                    <a style="cursor: pointer;" class="approve_btn part_btn">
+                        <img onclick="approve();" class="cen" style="width: 400px" src="srcs/imgs/part2/approve_btn.png"
+                            alt="" />
+                    </a>
+                </div>
+
+                <div class="buttons hidden">
                     <img onclick="pickabox();" style="cursor: pointer; width: 250px;" class="cen mx-auto text-center"
                         src="srcs/yellow_button.png" alt="" />
                     <br />
                     <img onclick="$('#overlay').hide(); $('#floating-box').fadeOut();" class="cen mx-auto text-center"
                         style="cursor:pointer; width: 200px" src="srcs/cls_button.png" alt="" />
                 </div>
+
                 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
                 <div class="w3-container"
                     style="width: 90%; text-align: center; justify-content: center; margin-right: auto; margin-left: auto;">
@@ -102,8 +110,9 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="success hidden">
-                    <h5>You won <span class="white_text">0.05</span> BNB</h5>
+                    <h5>You won <span id="won_value" class="white_text">0.05</span> BNB</h5>
                     <img onclick="$('#overlay').hide(); $('#floating-box').fadeOut();" class="cen mx-auto text-center"
                         style="cursor:pointer; width: 200px" src="srcs/cls_button.png" alt="" />
                 </div>
@@ -168,11 +177,7 @@
                         </table>
                     </div>
                     <br />
-                    <a style="cursor: pointer;" class="approve_btn part_btn">
-                        <img onclick="approve();" class="cen" style="width: 400px" src="srcs/imgs/part2/approve_btn.png"
-                            alt="" />
-                    </a>
-                    <div class="row hidden input_form">
+                    <div class="row input_form">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input placeholder="Input Number" type="number" class="form-control"
@@ -181,12 +186,12 @@
                         </div>
                         <br>
                         <div class="col-md-6">
-                            <a href="" class="part_btn">
+                            <a onclick="buyticket();" style="cursor: pointer;" class="part_btn">
                                 <img class="cen" style="width:400px" src="srcs/imgs/part4/buy_button.png" alt="" />
                             </a>
                         </div>
                         <div class="col-md-6 hidden">
-                            <a href="" class="part_btn">
+                            <a onclick="buyticket();" style="cursor: pointer;" class="part_btn">
                                 <img class="cen" style="width: 400px" src="srcs/imgs/part5/red_btn.png" alt="" />
                             </a>
                         </div>
@@ -202,28 +207,22 @@
                         <table class="table">
                             <tbody>
                                 <tr>
-                                    <th class="yellow_text_sml" scope="col">Box#</th>
-                                    <th scope="col">1-5</th>
+                                    <th class="yellow_text_sml" scope="col">Win</th>
+                                    <th scope="col">10%</th>
                                     <th class="arrow" scope="col">&gt;</th>
-                                    <th scope="col">0.5 BNB</th>
+                                    <th scope="col">0.3-0.45 BNB</th>
                                 </tr>
                                 <tr>
-                                    <th class="yellow_text_sml" scope="col">Box#</th>
-                                    <th scope="col">6-60</th>
+                                    <th class="yellow_text_sml" scope="col">Win</th>
+                                    <th scope="col">20%</th>
                                     <th class="arrow" scope="col">&gt;</th>
-                                    <th scope="col">0.01 BNB</th>
+                                    <th scope="col">0.1-0.3 BNB</th>
                                 </tr>
                                 <tr>
-                                    <th class="yellow_text_sml" scope="col">Box#</th>
-                                    <th scope="col">61-100</th>
+                                    <th class="yellow_text_sml" scope="col">Win</th>
+                                    <th scope="col">70%</th>
                                     <th class="arrow" scope="col">&gt;</th>
-                                    <th scope="col">0.005 BNB</th>
-                                </tr>
-                                <tr>
-                                    <th class="yellow_text_sml" scope="col">Box#</th>
-                                    <th scope="col">101-200</th>
-                                    <th class="arrow" scope="col">&gt;</th>
-                                    <th scope="col">0.001 BNB</th>
+                                    <th scope="col">0.015-0.1 BNB</th>
                                 </tr>
                             </tbody>
                         </table>
@@ -232,20 +231,20 @@
                 </div>
             </div>
             <br />
-            <div class="reward_box">
+            <div class="reward_box hidden">
                 <div class="part4 text-center mx-auto">
                     <br />
                     <img class="text-center mx-auto" src="srcs/imgs/part2/reward_img.png" />
                     <br />
                     <h5 class="white_text">REWARD IS NOT AVAILABLE YET</h5>
-                    <div class="w3-container"
+                    <!-- <div class="w3-container"
                         style="width: 70%; text-align: center; justify-content: center; margin-right: auto; margin-left: auto;">
                         <div class="w3-light-grey w3-round-xlarge">
                             <div id="progressBar" class="w3-container w3-green w3-round-xlarge">
                                 <h6 class="white_text black_text">COUNTDOWN: <span>90</span>DAYS</h6>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
                 <div class="part5 hidden">
