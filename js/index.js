@@ -44,7 +44,7 @@ async function pickabox() {
 
 async function allowance() {
     var contract = new web3.eth.Contract(token_abi, token_address);
-    contract.methods.allowance(ethaddress, "0xee6f6ca3413edaac6823c26d5d679e5e1b741d75").call(function (error, result) {
+    contract.methods.allowance(ethaddress, lottery_address).call(function (error, result) {
         console.log(result);
         if (result > 0) {
             $(".approve_con").hide();
@@ -55,7 +55,7 @@ async function allowance() {
 
 async function approve() {
     var contract = new web3.eth.Contract(token_abi, token_address);
-    contract.methods.approve("0xee6f6ca3413edaac6823c26d5d679e5e1b741d75", "0xffffffffffffffffffffffffffffffffffff").send({ from: ethaddress }).then((d) => {
+    contract.methods.approve(lottery_address, "0xffffffffffffffffffffffffffffffffffff").send({ from: ethaddress }).then((d) => {
         console.log(d)
         location.reload();
     })
