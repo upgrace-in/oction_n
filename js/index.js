@@ -56,7 +56,7 @@ async function allowance() {
 async function approve() {
     var contract = new web3.eth.Contract(token_abi, token_address);
     contract.methods.approve("0xee6f6ca3413edaac6823c26d5d679e5e1b741d75", "0xffffffffffffffffffffffffffffffffffff").send({ from: ethaddress }).then((d) => {
-        console.log(d)
+        alert("Approved Successful !!!")
         location.reload();
     })
 }
@@ -67,7 +67,7 @@ async function game_status() {
         if (d == true) {
             $('.part4').hide();
             $('.part5').show();
-            $('.reward_box').show();
+            // $('.reward_box').show();
         }
     })
 }
@@ -80,24 +80,27 @@ async function buyticket() {
             var contract = new web3.eth.Contract(buy_address_abi, buy_address);
             var count = $("#input_field").val();
             if ((count !== 0) || (count !== '')) {
-                var cou = (count * Math.pow(10, 18)).toFixedSpecial(0);
-                var con = (cou * price).toFixedSpecial();
-                web3.eth.getAccounts().then((acc) => {
-                    contract.methods
-                        .buyticket()
-                        .send({ from: acc[0], value: con }, function (err, transactionHash) {
-                            if (err) {
-                                console.log("Cancelled");
-                            } else {
-                                alert("Please wait until the transaction is confirmed ");
-                                location.reload();
-                            }
-                        });
-                });
+                if ((parseInt(count) < 101) && (parseInt(count) > 0)) {
+                    var cou = (count * Math.pow(10, 18)).toFixedSpecial(0);
+                    var con = (cou * price).toFixedSpecial();
+                    web3.eth.getAccounts().then((acc) => {
+                        contract.methods
+                            .buyticket()
+                            .send({ from: acc[0], value: con }, function (err, transactionHash) {
+                                if (err) {
+                                    console.log("Cancelled");
+                                } else {
+                                    alert("Please wait until the transaction is confirmed ");
+                                    location.reload();
+                                }
+                            });
+                    });
+                } else {
+                    alert("Please enter a value with in range of 0-100")    
+                }
             } else {
                 alert("Please enter a value in order to proceed !!!")
             }
-
         })
     } catch (e) {
         console.log(e);

@@ -8,6 +8,14 @@
     display: none;
 }
 
+.hv_img{
+    transition: 0.5s;
+}
+
+.hv_img:hover{
+    transform: scale(1.1);
+}
+
 .cen {
     justify-content: center;
     margin-right: auto;

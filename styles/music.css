@@ -5,6 +5,7 @@
 
 #app-cover
 {
+    z-index: 2 !important;
     position: fixed;
     bottom: 10px;
     right: 5px;
