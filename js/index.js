@@ -1,14 +1,14 @@
 var buy_address_abi = [{ "inputs": [], "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [{ "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "Bought", "type": "event" }, { "inputs": [{ "internalType": "address", "name": "_address", "type": "address" }], "name": "balanceOf", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "buyticket", "outputs": [], "stateMutability": "payable", "type": "function" }, { "inputs": [], "name": "price", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "token", "outputs": [{ "internalType": "contract IERC20", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }]
-var buy_address = "0xA2E3242ebF553F8C8C2acfcdF95109b5D5bc1Eb4";
+var buy_address = "0xfc393a61ab8c72cabd80d683c95bcdb39e030723";
 
 var token_abi = [{ "inputs": [], "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "tokenOwner", "type": "address" }, { "indexed": true, "internalType": "address", "name": "spender", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "tokens", "type": "uint256" }], "name": "Approval", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "from", "type": "address" }, { "indexed": true, "internalType": "address", "name": "to", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "tokens", "type": "uint256" }], "name": "Transfer", "type": "event" }, { "inputs": [{ "internalType": "address", "name": "owner", "type": "address" }, { "internalType": "address", "name": "delegate", "type": "address" }], "name": "allowance", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "delegate", "type": "address" }, { "internalType": "uint256", "name": "numTokens", "type": "uint256" }], "name": "approve", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "tokenOwner", "type": "address" }], "name": "balanceOf", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "decimals", "outputs": [{ "internalType": "uint8", "name": "", "type": "uint8" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "name", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "symbol", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "totalSupply", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "receiver", "type": "address" }, { "internalType": "uint256", "name": "numTokens", "type": "uint256" }], "name": "transfer", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "owner", "type": "address" }, { "internalType": "address", "name": "buyer", "type": "address" }, { "internalType": "uint256", "name": "numTokens", "type": "uint256" }], "name": "transferFrom", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }]
 var token_address = "0xf87483f08e7297b2b1460e0aec383cafe50eeb34";
 
 var lottery_abi = [{ "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "previousOwner", "type": "address" }, { "indexed": true, "internalType": "address", "name": "newOwner", "type": "address" }], "name": "OwnershipTransferred", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "internalType": "uint256", "name": "value", "type": "uint256" }], "name": "Reward", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "from", "type": "address" }, { "indexed": true, "internalType": "address", "name": "to", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "value", "type": "uint256" }], "name": "Transfer", "type": "event" }, { "inputs": [], "name": "boxcount", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "game_status", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "gametime", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "owner", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "pickabox", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "name": "rewardcontract", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "startthegame", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "name": "ticketcontract", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "tokencontract", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "newOwner", "type": "address" }], "name": "transferOwnership", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "_amount", "type": "uint256" }], "name": "withdraw_reward", "outputs": [], "stateMutability": "nonpayable", "type": "function" }]
-var lottery_address = "0xee6f6ca3413edaac6823c26d5d679e5e1b741d75";
+var lottery_address = "0x75F81e4dD3f58b0b89d92ba32C21134773eD7028";
 
 var lucky_abi = [{ "inputs": [], "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "tokenOwner", "type": "address" }, { "indexed": true, "internalType": "address", "name": "spender", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "tokens", "type": "uint256" }], "name": "Approval", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "from", "type": "address" }, { "indexed": true, "internalType": "address", "name": "to", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "tokens", "type": "uint256" }], "name": "Transfer", "type": "event" }, { "inputs": [{ "internalType": "address", "name": "owner", "type": "address" }, { "internalType": "address", "name": "delegate", "type": "address" }], "name": "allowance", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "delegate", "type": "address" }, { "internalType": "uint256", "name": "numTokens", "type": "uint256" }], "name": "approve", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "tokenOwner", "type": "address" }], "name": "balanceOf", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "decimals", "outputs": [{ "internalType": "uint8", "name": "", "type": "uint8" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "name", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "symbol", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "totalSupply", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "receiver", "type": "address" }, { "internalType": "uint256", "name": "numTokens", "type": "uint256" }], "name": "transfer", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "owner", "type": "address" }, { "internalType": "address", "name": "buyer", "type": "address" }, { "internalType": "uint256", "name": "numTokens", "type": "uint256" }], "name": "transferFrom", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }]
-var lucky_address = "0xf87483f08e7297b2b1460e0aec383cafe50eeb34";
+var lucky_address = "0x2b936f8833b041e2065ebdb85956e8b4e8fbad24";
 
 var web3;
 var ethaddress;
@@ -32,19 +32,23 @@ async function pickabox() {
     $('.buttons').hide();
     $('.pb2').show();
     $('#change_me').attr("src", "/srcs/chest.gif");
+
     var contract = new web3.eth.Contract(lottery_abi, lottery_address);
-    contract.methods.pickabox().call()
+    contract.methods.pickabox().send({ from: ethaddress })
         .then((d) => {
+            console.log(d);
+            var d = parseInt(d.events.Reward.returnValues.value) / 10 ** 18;
             console.log(d);
             $('.pb2').hide();
             $('.success').fadeIn();
-            $('#won_value').val("0.005");
+            $('#won_value').val(d);
         });
 }
 
 async function allowance() {
-    var contract = new web3.eth.Contract(lucky_abi, lucky_address);
-    contract.methods.allowance(ethaddress, lucky_address).call(function (error, result) {
+    var contract = new web3.eth.Contract(token_abi, token_address);
+    contract.methods.allowance(ethaddress, "0xee6f6ca3413edaac6823c26d5d679e5e1b741d75").call(function (error, result) {
+        console.log(result);
         if (result > 0) {
             $(".approve_con").hide();
             $(".buttons").show();
@@ -54,8 +58,9 @@ async function allowance() {
 
 async function approve() {
     var contract = new web3.eth.Contract(token_abi, token_address);
-    contract.methods.approve(lottery_address, "0xffffffffffffffffffffffffffffffffffff").send({ from: ethaddress }).then((d) => {
+    contract.methods.approve("0xee6f6ca3413edaac6823c26d5d679e5e1b741d75", "0xffffffffffffffffffffffffffffffffffff").send({ from: ethaddress }).then((d) => {
         console.log(d)
+        location.reload();
     })
 }
 
@@ -88,6 +93,7 @@ async function buyticket() {
                                 console.log("Cancelled");
                             } else {
                                 alert("Please wait until the transaction is confirmed ");
+                                location.reload();
                             }
                         });
                 });
@@ -128,11 +134,28 @@ async function connectWeb3() {
     }
 }
 
+function check_network() {
+    web3.eth.net.getId().then(networkId => {
+        if ((networkId == 97) || (networkId == 56)) {
+            web3.eth.net.getNetworkType().then(function (e) {
+                if (e !== 'private') {
+                    web3.eth.getChainId().then(function (e) {
+                        alert('Incorrect network. Your current chain Id is 0x' + e + ', Please connected to Binance Smart Chain');
+                    });
+                }
+            })
+        } else {
+            alert("Please connect to an BNB network in order to proceed !!!")
+            location.href = 'index.html'
+        }
+    })
+}
 
 function change_place() {
     web3.eth.getAccounts().then(function (acc) {
         if (acc[0]) {
             ethaddress = acc[0]
+
             if ($('#wallet_connected').length == 0) {
                 location.href = 'buy.html'
             }
@@ -140,6 +163,10 @@ function change_place() {
             $('.ethaddress').html(str)
 
             // move('progressBar');
+            check_network();
+            window.ethereum.on('networkChanged', function (networkId) {
+                check_network();
+            });
             availability();
             game_status();
             box_count();
